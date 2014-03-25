@@ -4,7 +4,7 @@ $fn =50;
 // Data of the arm structures
 arm_d = 13.6;          // outer diameter of cylinder
 arm_inner_d = 6;       // inner diameter
-arm_hole_d = 4.1;      // diameter of arm "whole"
+arm_hole_d = 4.2;      // diameter of arm "whole"
 arm_width = 5;         // width of arm (cube)
 arm_length = 17;       // distance of center of arm's cylinder to surface of central cylinder 
 
@@ -12,7 +12,7 @@ arm_length = 17;       // distance of center of arm's cylinder to surface of cen
 center_d = 19;              // Diameter of central part ("head")
 screw_d = 8;                // Diameter of screw
 screw_head_d = 14.2;        // Diameter of screw head
-screw_head_depth = 11;      
+screw_head_depth = 10;      
 
 
 // Parameters that affect the "nose" + entire structure
