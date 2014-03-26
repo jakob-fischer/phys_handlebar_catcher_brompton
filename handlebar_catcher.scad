@@ -1,11 +1,21 @@
+// author: Jakob Fischer (jakob@automorph.info)
+// date: 3/26/2014
+// description: 3d-model for replacement of the handlebar catcher 
+// on brompton bicycles. 
+// 
+// Print with ABS (20% infill) the size was fitting well. But after
+// some days it broke. The second attempt with PLA (100% infill) is a 
+// little bit to tight. Maybe the value of 'y_dist' has to be increased
+// slightly. Write me your experiences.
+
 // Precission of round parts
 $fn =50;
 
 // Data of the arm structures
 arm_d = 13.6;          // outer diameter of cylinder
 arm_inner_d = 6;       // inner diameter
-arm_hole_d = 4.2;      // diameter of arm "whole"
-arm_width = 5;         // width of arm (cube)
+arm_hole_d = 4.2;      // diameter of arm inner "hole"
+arm_width = 5;         // width of arm (cube structure)
 arm_length = 17;       // distance of center of arm's cylinder to surface of central cylinder 
 
 // Data for the central ("head") part
@@ -16,9 +26,9 @@ screw_head_depth = 10;
 
 
 // Parameters that affect the "nose" + entire structure
-height = 24;                   // height of entire structure
-nose_width = 5;
-nose_length = 4.7;
+height = 24;                  // height of entire structure
+nose_width = 5;               // width of "nose" structure           
+nose_length = 4.7;            // length of the nose measured from outer surface of central cylinder
 
 central_cutout_d = 12.5;    // diameter of the cylindrical cutout (where the part mounted to the handlebars go
 y_dist = 22;              // distance between center part of the two heads
@@ -75,6 +85,7 @@ module head() {
 
 
 //
+// Main part
 //
 
 difference() {
@@ -90,7 +101,7 @@ union() {
             arm();
     }
 
-    translate([center_d/2+nose_width+central_cutout_d/2,0,0])
+    translate([center_d/2+nose_length+central_cutout_d/2,0,0])
         cylinder(r=central_cutout_d/2, h=height+1, center=true);
 }
     
